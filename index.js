@@ -3,7 +3,7 @@ const crypto = require('crypto');
 
 const app = express();
 const port = process.env.PORT || 3000;
-const baseUrl = 'https://your-vercel-url.com'; // replace with your vercel deployment url
+const baseUrl = 'https://tinylinker.vercel.app'; // replace with your vercel deployment url
 const urlDatabase = {};
 
 app.use(express.json());
