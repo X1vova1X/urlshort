@@ -20,38 +20,68 @@ app.get('/', (req, res) => {
       <title>URL Shortener</title>
       <style>
         body {
-          font-family: Arial, sans-serif;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          justify-content: center;
-          height: 100vh;
+          font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+          background-color: #f0f0f0;
           margin: 0;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100vh;
+        }
+        .container {
+          text-align: center;
+          background-color: #fff;
+          padding: 30px;
+          border-radius: 8px;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+          width: 400px;
+        }
+        h1 {
+          color: #333;
+          margin-bottom: 20px;
         }
         form {
           display: flex;
           flex-direction: column;
           align-items: center;
         }
-        input {
-          margin: 10px;
+        input[type="url"] {
+          width: 300px;
           padding: 10px;
           font-size: 16px;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          margin-bottom: 10px;
         }
-        button {
+        button[type="submit"] {
           padding: 10px 20px;
           font-size: 16px;
           cursor: pointer;
+          background-color: #4CAF50;
+          color: white;
+          border: none;
+          border-radius: 4px;
+          transition: background-color 0.3s;
+        }
+        button[type="submit"]:hover {
+          background-color: #45a049;
+        }
+        p {
+          margin-top: 20px;
+          font-size: 14px;
+          color: #666;
         }
       </style>
     </head>
     <body>
-      <h1>URL Shortener</h1>
-      <form id="shortenForm">
-        <input type="url" name="url" placeholder="Enter URL to shorten" required>
-        <button type="submit">Shorten URL</button>
-      </form>
-      <p id="result"></p>
+      <div class="container">
+        <h1>URL Shortener</h1>
+        <form id="shortenForm">
+          <input type="url" name="url" placeholder="Enter URL to shorten" required>
+          <button type="submit">Shorten URL</button>
+        </form>
+        <p id="result"></p>
+      </div>
 
       <script>
         document.getElementById('shortenForm').addEventListener('submit', async (e) => {
